@@ -28,6 +28,8 @@ const walletSchema = new Schema({
   recharges: [rechargeSchema],
 });
 
+const Wallet = db.model("Wallet", walletSchema);
+
 const userSchema = new Schema({
   email: {
     type: String,
@@ -65,3 +67,10 @@ const userSchema = new Schema({
     required: true,
   },
 });
+
+const User = db.model("User", userSchema);
+
+export default {
+  User,
+  Wallet,
+};
